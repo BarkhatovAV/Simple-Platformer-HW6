@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Wallet : MonoBehaviour
 {
-   [SerializeField] private Text _text; 
+   [SerializeField] private Text _coinCount; 
 
    private List<Coin> _coins = new List<Coin>();
 
@@ -14,8 +14,8 @@ public class Wallet : MonoBehaviour
         if (collision.TryGetComponent<Coin>(out Coin coin))
         {
             _coins.Add(coin);
-            _text.text = _coins.Count.ToString();
-            coin.DestroyCoin();
+            _coinCount.text = _coins.Count.ToString();
+            coin.Destroy();
         }
     }
 }

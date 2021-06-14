@@ -8719,7 +8719,6 @@ MonoBehaviour:
   _speed: 5
   _jumpForce: 500
   _rigidbody2D: {fileID: 1464208967}
-  _transform: {fileID: 1464208971}
   _filter:
     useTriggers: 0
     useLayerMask: 0
@@ -8734,6 +8733,81 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  _walkRaght:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1464208974}
+        m_MethodName: AnimateWalkingToRight
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Walk Right
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1464208974}
+        m_MethodName: AnimateWalkingToLeft
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _walkLeft:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1464208974}
+        m_MethodName: AnimateWalkingToLeft
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Walk Left
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1464208974}
+        m_MethodName: AnimateWalkingToRight
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _idled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1464208974}
+        m_MethodName: AnimateWalkingToRight
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Idle Left
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1464208974}
+        m_MethodName: AnimateWalkingToLeft
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &1464208969
 Animator:
   serializedVersion: 3
@@ -8842,7 +8916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568cec8f7ea67be44937cc7e06ee7da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 361592036}
+  _coinCount: {fileID: 0}
 --- !u!114 &1464208974
 MonoBehaviour:
   m_ObjectHideFlags: 0

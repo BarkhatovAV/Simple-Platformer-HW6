@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
@@ -9,39 +10,32 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpForce;
     [SerializeField] private Rigidbody2D _rigidbody2D;
-    [SerializeField] private Transform _transform;
     [SerializeField] private ContactFilter2D _filter;
+    [SerializeField] private UnityEvent _walkRaght;
+    [SerializeField] private UnityEvent _walkLeft;
+    [SerializeField] private UnityEvent _idled;
 
     private bool _inAir;
 
-    private bool _isWalkRight;
-    public bool IsWalkRight => _isWalkRight;
-
-    private bool _isWalkLeft;
-    public bool IsWalkLeft => _isWalkLeft;
-
-    void Update()
+    private void Update()
     {
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(_speed * Time.deltaTime, 0, 0);
-            _isWalkRight = true;
+            _walkRaght?.Invoke();
+            
         }
-        else
-        {
-            _isWalkRight = false;
-        }
-
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(-_speed * Time.deltaTime, 0, 0);
-            _isWalkLeft = true;
+            _walkLeft?.Invoke();
+
         }
         else
         {
-            _isWalkLeft = false;
+            _idled?.Invoke();
         }
-
+        
         if (Input.GetKey(KeyCode.Space) && !_inAir)
         {
             _inAir = true;
@@ -55,4 +49,3 @@ public class PlayerMovement : MonoBehaviour
             _inAir = false;
     }
 }
-

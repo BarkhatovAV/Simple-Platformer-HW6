@@ -1,39 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 [RequireComponent(typeof(Animator))]
-[RequireComponent(typeof(PlayerMovement))]
 public class PlayerAnimator : MonoBehaviour
 {
     private Animator _animator;
-    private PlayerMovement _playerMovement;
 
-    void Start()
+    private void Start()
     {
         _animator = GetComponent<Animator>();
-        _playerMovement = GetComponent<PlayerMovement>();
     }
 
-    void Update()
+    public void AnimateWalkingToRight(bool isWalkRight)
     {
-        if (_playerMovement.IsWalkRight)
-        {
-            _animator.SetBool("Walk Right", true);
-        }
-        else
-        {
-            _animator.SetBool("Walk Right", false);
-        }
+        _animator.SetBool("Walk Right", isWalkRight);
+    }
 
-        if (_playerMovement.IsWalkLeft)
-        {
-            _animator.SetBool("Walk Left", true);
-        }
-        else
-        {
-            _animator.SetBool("Walk Left", false);
-        }
+    public void AnimateWalkingToLeft(bool isWalkLeft)
+    {
+        _animator.SetBool("Walk Left", isWalkLeft);
     }
 }
