@@ -5,16 +5,17 @@ using UnityEngine.UI;
 
 public class Wallet : MonoBehaviour
 {
-   [SerializeField] private Text _coinCount; 
+    private List<Coin> _coins = new List<Coin>();
+    private int _coinsCount;
 
-   private List<Coin> _coins = new List<Coin>();
+    public int CoinsCount => _coinsCount;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent<Coin>(out Coin coin))
         {
             _coins.Add(coin);
-            _coinCount.text = _coins.Count.ToString();
+            _coinsCount = _coins.Count;
             coin.Destroy();
         }
     }

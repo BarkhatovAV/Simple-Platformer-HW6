@@ -11,6 +11,5 @@ public class Death : MonoBehaviour
         {
             SceneManager.LoadScene("SampleScene");
         }
-        
     }
 }
