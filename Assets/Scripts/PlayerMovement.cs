@@ -7,12 +7,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _jumpForce;
     [SerializeField] private Rigidbody2D _rigidbody2D;
 
-    private float _distanceToSurface = 0.2f;
-    private RaycastHit2D[] hitBuffer = new RaycastHit2D[2];
-
     [SerializeField] private UnityEvent _walkRaght;
     [SerializeField] private UnityEvent _walkLeft;
     [SerializeField] private UnityEvent _idled;
+
+    private float _distanceToSurface = 0.2f;
+    private RaycastHit2D[] hitBuffer = new RaycastHit2D[2];
 
     private void Update()
     {

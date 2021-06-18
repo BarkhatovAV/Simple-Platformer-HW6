@@ -5,17 +5,10 @@ using UnityEngine.UI;
 
 public class CoinCountView : MonoBehaviour
 {
-    [SerializeField] private Wallet _wallet;
     [SerializeField] private Text _coinDisplayField;
 
-    private int _coinCount;
-
-    private void FixedUpdate()
+    public void View(List<Coin> coins)
     {
-        if (_coinCount != _wallet.CoinsCount)
-        {
-            _coinCount = _wallet.CoinsCount;
-            _coinDisplayField.text = _coinCount.ToString();
-        }
+        _coinDisplayField.text = coins.Count.ToString();
     }
 }

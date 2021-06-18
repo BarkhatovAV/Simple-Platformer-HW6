@@ -8885,6 +8885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568cec8f7ea67be44937cc7e06ee7da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coinCountView: {fileID: 1464208975}
 --- !u!114 &1464208974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8909,7 +8910,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b6cdf6c696b5644e81589a73ea7d13b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wallet: {fileID: 1464208973}
   _coinDisplayField: {fileID: 361592036}
 --- !u!1 &1504055437
 GameObject:
